@@ -5,8 +5,6 @@ import time
 version = "1"
 previous_hash = "0000000000000000000000000000000000000000000000000000000000000000"
 merkle_root = "4a5e1e"  # fake Merkle root
-
-# Use a fixed recent timestamp to avoid nonce exhaustion issues
 timestamp = "1722750000"  # or str(int(time.time()))
 bits = 0x1f00ffff
 
