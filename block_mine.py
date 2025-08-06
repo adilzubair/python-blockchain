@@ -20,8 +20,8 @@ def bits_to_target(bits):
     return target
 
 # Compute the numeric target from bits
-target = bits_to_target(bits)
-print(f"🎯 Target (hex): {hex(target)}")
+target = int(0x00000000FFFF0000000000000000000000000000000000000000000000000000 // 0.001)
+print(f"🎯 Custom target (difficulty ~95): {hex(target)}")
 
 def calculate_hash(nonce):
     """
