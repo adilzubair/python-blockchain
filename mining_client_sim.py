@@ -30,14 +30,14 @@ while True:
     nonce_start = res['nonce_start']
     nonce_end = res['nonce_end']
 
-    print(f"⛏️  Mining from {nonce_start} to {nonce_end}")
+    print(f"Mining from {nonce_start} to {nonce_end}")
 
     for nonce in range(nonce_start, nonce_end):
         hash_hex = calculate_hash(block, bits, nonce)
         hash_int = int(hash_hex, 16)
 
         if hash_int < target:
-            print(f"✅ Solution found! Nonce: {nonce}, Hash: {hash_hex}")
+            print(f"Solution found! Nonce: {nonce}, Hash: {hash_hex}")
             requests.post(f"{SERVER}/submit", json={
                 "nonce": nonce,
                 "hash_hex": hash_hex,
@@ -45,4 +45,4 @@ while True:
             })
             exit()
 
-    print("❌ No solution in this range. Requesting next...")
+    print("No solution in this range. Requesting next...")

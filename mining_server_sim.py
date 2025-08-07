@@ -55,10 +55,10 @@ def submit():
     if data['hash_int'] < target:
         found_solution = True
         end_time = time.time()
-        print("✅ Block mined!")
+        print("Block mined!")
         print(f"Nonce: {data['nonce']}")
         print(f"Hash: {data['hash_hex']}")
-        print(f"⏱️ Time taken: {end_time - start_time:.2f} seconds")
+        print(f"Time taken: {end_time - start_time:.2f} seconds")
         return jsonify({"status": "accepted"})
     return jsonify({"status": "rejected"})
 
